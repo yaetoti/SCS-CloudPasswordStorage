@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.MainView">
+    <center>
+      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" styleClass="vBox" BorderPane.alignment="CENTER">
+        <Label alignment="CENTER" contentDisplay="CENTER" styleClass="mainLabel" text="Passwords" textAlignment="CENTER">
+          <VBox.margin>
+            <Insets left="25.0" right="25.0" top="15.0" />
+          </VBox.margin>
+        </Label>
+        <ListView fx:id="list" prefHeight="200.0" prefWidth="200.0" styleClass="list" VBox.vgrow="ALWAYS">
+          <VBox.margin>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+          </VBox.margin>
+        </ListView>
+        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="10.0">
+          <VBox.margin>
+            <Insets bottom="20.0" right="20.0" top="10.0" />
+          </VBox.margin>
+          <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#onActionRefresh" styleClass="refreshButton" text="Refresh" />
+          <Button fx:id="addButton" mnemonicParsing="false" onAction="#onActionAdd" styleClass="addButton" text="Add password" />
+        </HBox>
+      </VBox>
+    </center>
+   <top>
+     <MenuBar BorderPane.alignment="CENTER">
+       <Menu mnemonicParsing="false" text="Menu">
+         <MenuItem onAction="#onActionAbout" text="About" />
+         <MenuItem onAction="#onActionLogout" text="Log out" />
+       </Menu>
+     </MenuBar>
+   </top>
+</BorderPane>

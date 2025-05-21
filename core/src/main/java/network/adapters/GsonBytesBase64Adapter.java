@@ -1,0 +1,17 @@
+package network.adapters;
+import com.google.gson.*;
+
+import java.lang.reflect.Type;
+import java.util.Base64;
+
+public class GsonBytesBase64Adapter implements JsonSerializer<byte[]>, JsonDeserializer<byte[]> {
+  @Override
+  public JsonElement serialize(byte[] bytes, Type type, JsonSerializationContext jsonSerializationContext) {
+    return new JsonPrimitive(Base64.getEncoder().encodeToString(bytes));
+  }
+
+  @Override
+  public byte[] deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
+    return Base64.getDecoder().decode(jsonElement.getAsString());
+  }
+}
